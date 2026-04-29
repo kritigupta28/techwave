@@ -1,65 +1,100 @@
-import Image from "next/image";
+import styles from './page.module.css';
+import Button from '../components/Button';
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div>
+      {/* Hero Section */}
+      <section className={styles.hero}>
+        <div className={`container ${styles.heroContainer}`}>
+          <div className={styles.heroContent}>
+            <h1 className={styles.heroTitle}>
+              Powering the Future with <span className="text-secondary">Reliability</span> & <span className="text-primary">Connectivity</span>
+            </h1>
+            <p className={styles.heroSubtitle}>
+              Experience uninterrupted power, seamless connectivity, and sustainable energy solutions tailored for your business and home.
+            </p>
+            <div className={styles.heroActions}>
+              <Button href="/contact" variant="primary">Get a Free Quote</Button>
+              <Button href="/about" variant="outline">Explore Our Solutions</Button>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Products/Services Section */}
+      <section className={`section-padding bg-gray`}>
+        <div className="container">
+          <div className="text-center" style={{ marginBottom: '3rem' }}>
+            <h2>Our Core Solutions</h2>
+            <p className="text-light">Comprehensive infrastructure for every requirement.</p>
+          </div>
+          <div className="grid grid-cols-4">
+            <div className={styles.serviceCard}>
+              <div className={styles.serviceIcon}>⚡</div>
+              <h3>Generators</h3>
+              <p>Reliable backup power for all industrial and commercial needs.</p>
+            </div>
+            <div className={styles.serviceCard}>
+              <div className={styles.serviceIcon}>🌐</div>
+              <h3>IT Networking</h3>
+              <p>Complete IT infrastructure and networking hardware setups.</p>
+            </div>
+            <div className={styles.serviceCard}>
+              <div className={styles.serviceIcon}>🔋</div>
+              <h3>UPS & Batteries</h3>
+              <p>Seamless power transitions and long-lasting VRLA battery setups.</p>
+            </div>
+            <div className={styles.serviceCard}>
+              <div className={styles.serviceIcon}>☀️</div>
+              <h3>Solar Solutions</h3>
+              <p>Sustainable, green energy setups for a better tomorrow.</p>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="section-padding">
+        <div className="container">
+          <div className={`grid grid-cols-2 ${styles.whyChooseUsGrid}`}>
+            <div>
+              <h2>Why Choose Techwave Elecso?</h2>
+              <p style={{ marginBottom: '2rem' }}>
+                We are dedicated to providing top-tier solutions that keep your operations running smoothly. Our commitment to excellence sets us apart.
+              </p>
+              <ul className={styles.featureList}>
+                <li>
+                  <div className={styles.featureCheck}>✓</div>
+                  <div>
+                    <h4>Expert Installation</h4>
+                    <p className="text-light">Professional setup by certified technicians.</p>
+                  </div>
+                </li>
+                <li>
+                  <div className={styles.featureCheck}>✓</div>
+                  <div>
+                    <h4>24/7 Support</h4>
+                    <p className="text-light">Round-the-clock assistance whenever you need it.</p>
+                  </div>
+                </li>
+                <li>
+                  <div className={styles.featureCheck}>✓</div>
+                  <div>
+                    <h4>Top Quality Brands</h4>
+                    <p className="text-light">We partner with industry-leading manufacturers.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div className={styles.whyImageContainer}>
+              <div className={styles.placeholderImage}>
+                <span>Techwave Reliability</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
